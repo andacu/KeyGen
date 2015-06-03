@@ -24,7 +24,7 @@
  *	THE SOFTWARE.
  */
  
-namespace Utility\Generator;
+namespace Keygen\Utility\Generator;
  
 class KeyGenerator {
 	
