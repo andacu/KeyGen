@@ -59,6 +59,11 @@ class KeyGenerator {
 	{
 		$randStr    = '';
 		$charLength = strlen($this->pattern);
+		
+		if ($length > $charLength) {
+			throw new \Exception('Key length out of bound');
+		} 
+
 		for ($i = 0; $i < $length; $i++) {
 			$randStr .= $this->pattern[mt_rand(0, $charLength - 1)];
 		}
@@ -77,7 +82,9 @@ class KeyGenerator {
 		$this->keyBuffer = array();
 		$keys = array();
 		for ($i = 0; $i < $total; $i++) {
-			$keys[] = $this->getUniqueKey($length);
+			$key = $this->getUniqueKey($length);
+			$keys[] = $key;
+			$this->keyBuffer[$key] = true;
 		}
 		
 		if ($output) {
@@ -102,9 +109,8 @@ class KeyGenerator {
 			if (!($this->keyInBuffer($key))) {
 				return $key;
 			}
-			$this->keyBuffer[] = $key;
 			if ($this->maxIteration <= $tries) {
-				throw new \Exception(sprintf('Unable to generate unique key after %s of iteration', $this->maxIteration));
+				throw new \Exception(sprintf('Unable to generate unique key after %s iteration', $this->maxIteration));
 			} 
 			$tries++;
 		}
