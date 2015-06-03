@@ -25,6 +25,8 @@
  */
  
 namespace Keygen\Utility\Generator;
+
+use Keygen\Utility\Output\OutputInterface;
  
 class KeyGenerator {
 	
@@ -58,7 +60,7 @@ class KeyGenerator {
 		$randStr    = '';
 		$charLength = strlen($this->pattern);
 		for ($i = 0; $i < $length; $i++) {
-			$randStr .= $this->pattern[rand(0, $charLength - 1)];
+			$randStr .= $this->pattern[mt_rand(0, $charLength - 1)];
 		}
 		return $randStr;
 	}
@@ -70,13 +72,18 @@ class KeyGenerator {
 	 * @param integer $total
 	 * @return array
 	 */
-	public function generateUniqueKeys($length, $total = 10)
+	public function generateUniqueKeys($length, $total = 10, OutputInterface $output = null)
 	{
 		$this->keyBuffer = array();
 		$keys = array();
 		for ($i = 0; $i < $total; $i++) {
 			$keys[] = $this->getUniqueKey($length);
 		}
+		
+		if ($output) {
+			$output->render($keys);
+		}
+		
 		return $keys;
 	}
 	
