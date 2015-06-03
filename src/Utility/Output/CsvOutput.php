@@ -26,7 +26,7 @@
 
 namespace Keygen\Utility\Output;
 
-class TextOutput implements OutputInterface {
+class CsvOutput implements OutputInterface {
 	
 	protected $outputPath;
 	
@@ -44,7 +44,7 @@ class TextOutput implements OutputInterface {
 	{
 		if (!empty($this->outputPath)) {
 			$filename = md5(serialize($keys));
-			file_put_contents(sprintf("%s/%s.txt",$this->outputPath, $filename), implode("\r\n",$keys));
+			file_put_contents(sprintf("%s/%s.csv",$this->outputPath, $filename), implode("\r\n",$keys));
 		}
 		return $keys;
 	}
