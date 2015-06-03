@@ -16,8 +16,8 @@
         "php": ">=5.3.1"
     },
     "autoload" : {
-        "psr-0" : {
-            "Keygen" : "src/"
+        "psr-4" : {
+            "Keygen\\" : "src/"
         }
     },
     "repositories" : [{}],
