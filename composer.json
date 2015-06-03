@@ -1,6 +1,5 @@
 {
     "name" : "andacu/keygen",
-    "minimum-stability": "dev",
     "description" : "Key Generator Library",
     "type" : "library",
     "authors" : [{
