@@ -1,0 +1,29 @@
+{
+    "name" : "andacu/keygen",
+    "description" : "Key Generator Library",
+    "type" : "library",
+    "authors" : [{
+        "name" : "Andrew Aculana",
+        "email" : "andrew.aculana@gmail.com"
+    }],
+    "keywords" : [
+        "framework", "key", "generator"
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "require": {
+        "php": ">=5.3.1"
+    },
+    "autoload" : {
+        "psr-0" : {
+            "KeyGen" : "src/"
+        }
+    },
+    "repositories" : [{}],
+    "extra" : {
+    "branch-alias" : {
+            "dev-master" : "1.0-dev"
+        }
+    }
+}
