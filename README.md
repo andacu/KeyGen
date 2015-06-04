@@ -4,7 +4,7 @@ Generate Random keys based from a pattern of string
 ```php
 <?php
 
-$keygen = new Keygen\Utility\Generator\KeyGenerator();
+$keygen = new Keygen\Utility\Generator\KeyGenerator('0123456789abcdefghijklmnopqrstuvwxyz');
 $csvOutput = new Keygen\Utility\Output\CsvOutput(__DIR__);
 
 // Generate 10000 9 digit unique keys based from the default pattern 
