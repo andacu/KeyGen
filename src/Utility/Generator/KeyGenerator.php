@@ -3,7 +3,7 @@
 /**
  *  Generate Random keys based from a pattern of string
  *
- *	Copyright (c) Andrew Aculana <andrew.aculana@groupm.com>
+ *	Copyright (c) Andrew Aculana <andrew.aculana@gmail.com>
  *
  *	Permission is hereby granted, free of charge, to any person obtaining a copy
  *	of this software and associated documentation files (the "Software"), to deal
